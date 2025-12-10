@@ -3,11 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AhaGate（アハゲート）は、初心者から中級者までを対象としたオンラインプログラミングスクールです。
-  月4回のZoomセッションやLINEでの質問対応を通じて、受講生の自走力と継続力を育成します。
-  ビギナーコースではHTML、CSS、JavaScript、PHPなどの基礎を学び、プロコースではLaravelを用いたポートフォリオ制作を行います。
-  月額30,000円で入会金や違約金は不要、途中解約も可能です。
-  学習習慣がなくても、講師がスケジュール管理をサポートします。詳細は公式サイトをご覧ください。">
+  <meta name="description" content="GIbbleではホームページ制作・システム開発を一貫して対応しております。チーム体制となっており各分野の専門を集めることでクライアント様が喜ぶ結果にコミットします。">
 
   <title><?php bloginfo('name'); ?></title>
   <?php wp_head(); ?>
