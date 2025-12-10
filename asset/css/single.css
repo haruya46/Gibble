@@ -1,0 +1,84 @@
+.single_post {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  
+  .post_detail {
+    max-width: 700px; /* ここ修正 */
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .post_thumbnail {
+    width: 100%;
+    height: auto; /* 固定値から自動に変更 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .post_thumbnail img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .post_title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .post_meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .post_content {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  @media (max-width: 768px) {
+    .post_detail {
+      width: 95%;
+      padding: 0 10px;
+    }
+  
+    .post_title {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+  
+    .post_meta {
+      font-size: 0.8rem;
+      text-align: right;
+    }
+  
+    .post_content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  
+    .post_thumbnail {
+      height: 300px;
+      width: 100%;
+      margin-bottom: 15px;
+      object-fit: contain;
+      display: block;
+    }
+  
+    .post_thumbnail img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  

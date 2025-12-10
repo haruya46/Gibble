@@ -1,0 +1,101 @@
+/*
+Theme Name: Gibble Theme
+Author: Gibble
+Description: Gibble専用のカスタムWordPressテーマです。
+Version: 1.0
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+
+}
+
+/* ヘッダー */
+.header{
+    display: flex;
+    align-items: center
+}
+.header-logo {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+.nav ul{
+    display: flex;
+}
+.nav li{
+    list-style: none;
+    margin: 20px;
+    font-size: 20px;
+
+}
+.nav{
+    margin: 0 auto;
+}
+.footer-area{
+    margin-top:5%;
+    text-align: center;
+}
+
+
+
+/* ========= タブレット (1024px) ========= */
+@media (max-width: 1024px) {
+    .nav li {
+        margin: 15px;
+        font-size: 18px;
+    }
+
+    .header-logo {
+        width: 160px;
+        height: 80px;
+    }
+}
+
+/* ========= スマホ (768px) ========= */
+@media (max-width: 768px) {
+
+    /* ▼ヘッダー縦並びに変更 */
+    .header {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .header-logo {
+        width: 150px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    /* ▼ナビの並び幅調整 */
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav li {
+        margin: 10px 15px;
+        font-size: 18px;
+    }
+}
+
+/* ========= 超小型スマホ (480px) ========= */
+@media (max-width: 480px) {
+
+    .header-logo {
+        width: 130px;
+        height: 60px;
+    }
+
+    .nav li {
+        margin: 8px 12px;
+        font-size: 16px;
+    }
+}
