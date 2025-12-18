@@ -51,7 +51,7 @@ if ($achievements->have_posts()) :
 
             <!-- 縦スライド画像エリア -->
             <div class="achievements-img-wrap">
-                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="600"></iframe>
+                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="1000"></iframe>
             </div>
 
             <!-- テキストエリア -->
@@ -86,30 +86,29 @@ $about_query = new WP_Query(array(
 ));
 
 if ($about_query->have_posts()) :
-    while ($about_query->have_posts()) : $about_query->the_post();
 ?>
-
 <div class="about" id="about">
     <h2 class="about-title">About</h2>
 
-    <div class="about-area">
-        <?php if (has_post_thumbnail()) : ?>
-            <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="about-img">
-        <?php endif; ?>
+    <?php while ($about_query->have_posts()) : $about_query->the_post(); ?>
+        <div class="about-area">
+            <?php if (has_post_thumbnail()) : ?>
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="about-img">
+            <?php endif; ?>
 
-        <div class="about-comment">
-            <p><?php the_title(); ?></p>
-
-            <p><?php the_content(); ?></p>
+            <div class="about-comment">
+                <p><?php the_title(); ?></p>
+                <p><?php the_content(); ?></p>
+            </div>
         </div>
-    </div>
+    <?php endwhile; ?>
 </div>
 
 <?php
-    endwhile;
     wp_reset_postdata();
 endif;
 ?>
+
 
 
 
