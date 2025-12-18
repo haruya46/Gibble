@@ -15,6 +15,25 @@
     });
   });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.achievements-slider');
+    const items  = document.querySelectorAll('.achievements-item');
+    const dots   = document.querySelectorAll('.achievements-dots .dot');
+
+    if (!slider || items.length === 0) return;
+
+    slider.addEventListener('scroll', () => {
+        const itemWidth = items[0].offsetWidth + 40; // gap分
+        const index = Math.round(slider.scrollLeft / itemWidth);
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+    });
+});
+</script>
 
 </body>
 </html>

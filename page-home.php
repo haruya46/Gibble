@@ -38,45 +38,60 @@ $achievements = new WP_Query(array(
 ));
 
 if ($achievements->have_posts()) :
+    $total = $achievements->found_posts;
+    $index = 1;
 ?>
 <div class="achievements" id="achievements">
     <h2 class="achievements-title">Achievements</h2>
 
+    <!-- 件数表示（タイトル直下） -->
+    <div class="achievements-dots">
+    <?php for ($i = 0; $i < $total; $i++): ?>
+        <span class="dot <?php echo $i === 0 ? 'active' : ''; ?>"></span>
+    <?php endfor; ?>
+    </div>
+
     <div class="achievements-slider">
-        <?php while ($achievements->have_posts()) : $achievements->the_post(); 
+        <?php while ($achievements->have_posts()) : $achievements->the_post();
             $link = get_post_meta(get_the_ID(), 'achievements_link_url', true);
-            $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
         ?>
         <div class="achievements-item">
 
-            <!-- 縦スライド画像エリア -->
             <div class="achievements-img-wrap">
-                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="100%"></iframe>
+                <?php if ($link): ?>
+                    <iframe
+                        src="<?php echo esc_url($link); ?>"
+                        class="achievements-iframe"
+                        loading="lazy">
+                    </iframe>
+                <?php endif; ?>
             </div>
 
-            <!-- テキストエリア -->
             <div class="achievements-area">
-                <p><?php the_title(); ?></p>
+                <p class="achievements-item-title"><?php the_title(); ?></p>
 
                 <?php if ($link): ?>
-                    <a href="<?php echo esc_url($link); ?>" target="_blank">サイトリンクに飛ぶ</a>
+                    <a href="<?php echo esc_url($link); ?>" target="_blank">
+                        サイトリンクに飛ぶ
+                    </a>
                 <?php endif; ?>
 
-                <p><?php the_content(); ?></p>
+                <div class="achievements-content">
+                    <?php the_content(); ?>
+                </div>
             </div>
 
         </div>
-        <?php endwhile; ?>
+        <?php $index++; endwhile; ?>
     </div>
-
 </div>
 
 <?php
+    wp_reset_postdata();
 endif;
-wp_reset_postdata();
 ?>
 
-    
+
 
 
 <?php
