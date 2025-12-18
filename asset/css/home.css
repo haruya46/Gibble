@@ -196,13 +196,19 @@
         padding-bottom: 5%;
     }
     .achievements-item {
+        display: flex;          /* ← これが無かった */
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
 
     .achievements-img-wrap {
-        height: 350px;
+        width: 100%;
+        height: 1000px;
+        overflow: hidden;
     }
+    
+
 
     .achievements-area {
         width: 95%;

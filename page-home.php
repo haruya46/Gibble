@@ -51,7 +51,7 @@ if ($achievements->have_posts()) :
 
             <!-- 縦スライド画像エリア -->
             <div class="achievements-img-wrap">
-                <img src="<?php echo esc_url($img); ?>" alt="" class="achievements-img">
+                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="600"></iframe>
             </div>
 
             <!-- テキストエリア -->
@@ -82,7 +82,7 @@ wp_reset_postdata();
 <?php
 $about_query = new WP_Query(array(
     'post_type' => 'about',
-    'posts_per_page' => 1
+    'posts_per_page' => -1
 ));
 
 if ($about_query->have_posts()) :
