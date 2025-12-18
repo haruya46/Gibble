@@ -51,7 +51,7 @@ if ($achievements->have_posts()) :
 
             <!-- 縦スライド画像エリア -->
             <div class="achievements-img-wrap">
-                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="1000"></iframe>
+                <iframe src="<?php echo esc_url($link); ?>" class="achievements-iframe" loading="lazy" width="100%" height="100%"></iframe>
             </div>
 
             <!-- テキストエリア -->
